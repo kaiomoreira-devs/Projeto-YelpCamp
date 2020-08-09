@@ -1,0 +1,18 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center; font-weight: bolder ;">Adicionar comentario a <%= camp.nome %> </h1>
+        <div style="width: 30%; margin: 20px auto;">  
+            <form action="/camp/<%= camp._id %>/comentarios" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comentario[texto]" placeholder="texto">
+                </div>
+                    <button class="btn btn-primary btn-lg">Enviar</button>
+            </form>
+            <h5><a href="/camp/<%= camp._id %> ">Voltar ao camping</a></h4>
+        </div> 
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

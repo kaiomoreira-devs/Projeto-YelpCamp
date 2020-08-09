@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" >
+    </head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" style="font-weight: bold;">YelpCamp</a>
+            </div>
+                <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                        <% if(!currentUser){ %>
+                            <li><a href="/login"> Login</a></li>
+                            <li><a href="/register">Sign Up</a></li>
+                        <% }else{ %>
+                            <li><a href="#"><i class="fas fa-user"></i> <%= currentUser.username.substring(0,1).toUpperCase().concat(currentUser.username.substring(1)); %> </a></li>
+                            <li><a href="/logout">Logout</a> </li>
+                        <% } %>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+
+    
+    <% if(error && error.length > 0) { %>
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+                <p style="text-align: center;"><%= error %></p>
+            </div>
+        </div>
+    <% } %> 
+
+    <% if(success && success.length > 0) { %>
+        <div class="container">
+            <div class="alert alert-success" role="alert">
+                <p style="text-align: center;"><%= success %></p>
+            </div>
+        </div>
+    <% } %> 

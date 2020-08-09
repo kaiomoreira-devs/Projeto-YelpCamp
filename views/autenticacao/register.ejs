@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %> 
+    <div class="container">
+        <div class="row">
+            <div style="width: 30%; margin: 100px auto;">  
+                <h1 style=" margin-bottom: 20px;">Registrar</h1>
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="username" placeholder="nome de usuario" title="Digite o nome de usuário" required oninvalid="this.setCustomValidity('Digite o nome de usuário!')" onchange="try{setCustomValidity('')}catch(e){}">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="password" title="Digite o password" required oninvalid="this.setCustomValidity('Digite o password!')" onchange="try{setCustomValidity('')}catch(e){}">
+                    </div>
+                        <button class="btn btn-primary btn-xm">Enviar</button>
+                </form>
+                <h5><a href="/camp">Voltar ao camping</a></h4>
+            </div> 
+        </div>
+    </div>
+<%- include ("../partials/footer") %> 
